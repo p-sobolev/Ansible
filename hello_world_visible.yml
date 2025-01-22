@@ -1,0 +1,12 @@
+---
+- name: Echo hello world on all hosts
+  hosts: all
+  tasks:
+    - name: Echo hello world
+      shell: echo "hello world"
+      register: echo_output
+
+    - name: Display the output
+      debug:
+        var: echo_output.stdout
+
